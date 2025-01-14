@@ -1,0 +1,79 @@
+body {
+  // padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: inline-block;
+    font: 400 6rem / 1.7 $font-family-lato;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+
+    @include respond(phone) {
+      // width < 600?
+      letter-spacing: 1rem; // 1rem = 4.8px, 0.3 * 16 = 4.8
+      font-size: 5rem;
+    }
+  }
+
+  &--sub {
+    display: inline-block;
+    font: 700 2rem / 1.7 $font-family-lato;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      // width < 600?
+      letter-spacing: 0.5rem; // 1rem = 4.8px, 0.3 * 16 = 4.8
+    }
+  }
+}
+
+.heading-secondary {
+  font: 700 3.5rem $font-family-lato;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 3rem; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    // width < 600?
+    font-size: 2.5rem; // 1rem = 4.8px, 0.3 * 16 = 4.8
+  }
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-tertiary {
+  font: 700 $default-font-size $font-family-lato;
+  color: $color-gray-dark;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font: 400 $default-font-size $font-family-lato;
+  color: $color-gray-dark;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
